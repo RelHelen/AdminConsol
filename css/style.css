@@ -1,0 +1,19 @@
+.aside_main{
+	position: fixed;
+	width: 250px;
+	left: 0;
+	top:0;
+	bottom: 0;
+	z-index: 1031;
+}	
+.nav_main{
+	padding-left: 280px;
+}
+a.nav-link{
+	color: #ddd;
+}
+.nav-link>i{
+	padding-right: 5px;
+} 
+
+

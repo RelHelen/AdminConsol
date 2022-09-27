@@ -1,0 +1,106 @@
+@textColor: #222;
+@bgColor: rgb(233, 166, 166);
+@primary: rgb(29, 55, 148);
+@grey: #ddd;
+@success: rgb(25, 240, 176);
+@danger: rgb(255, 167, 5);
+@warning: rgb(177, 47, 47);
+
+@linkColor: @primary;
+
+@fontSize: 17px;
+@h1: @fontSize*1.6;
+@h2: @fontSize*1.4;
+@h3: @fontSize*1.2;
+
+@selector-class: border;
+.@{selector-class}
+    {
+    border: 1px solid @primary;
+    }
+// миксины
+ 
+.bordered(@c){
+    border: 1px solid @c;
+    border-radius: 8px;  
+}
+
+.flexed(@fd,@jc){
+    display: flex;
+    flex-direction: @fd;
+    justify-content: @jc;
+}
+
+
+html{
+    font-size: @fontSize;
+}
+body{
+    background: @bgColor - #011;
+    color: @textColor;
+}
+a{
+    color: @linkColor;
+}
+h1{
+    font-size: @h1;
+}
+h2{
+    font-size: @h2;
+}
+h3{
+    font-size: @h3;
+}
+.product{
+    .flexed(row,space-between);
+    .card{
+        width: 300px;
+        height: 400px;
+        // border: 1px solid @grey;
+        // border-radius: 8px;
+        .bordered(@grey);
+        margin: 10px;   
+        .flexed(column,space-between);     
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;        
+        padding: 10px;
+        
+        &_primary{
+            .bordered(@primary);
+        }
+        &_success{
+            .bordered(@success);
+        }
+        &_danger{
+            .bordered(@danger);
+        }
+        &:hover{
+            background: @bgColor;
+        }
+        &__header h3{
+            text-align: center;
+            color: @grey;
+        }
+        &__body{
+            // растяжение сжатия ширина
+            flex:1 1 auto;
+        }
+        &__footer{
+            text-align: center;
+        }
+    }
+}
+.btn{
+    width: 80%;
+    background: @grey;
+    padding: 8px 8px;
+    // border: 1px solid (@grey - #777);
+    // border-radius: 8px;
+    .bordered(@grey - #777);
+    
+    &_primary{
+        .bordered(@primary - #777);
+        background: @primary;
+    }
+}
